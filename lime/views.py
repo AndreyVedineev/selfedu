@@ -1,13 +1,13 @@
 from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 
 def index(request):
-    return HttpResponse("Главная страница приложения Lime")
+    return render(request, 'lime/index.html')
 
 
 def about(request):
-    return HttpResponse("Страница о нас приложения  Lime")
+    return render(request, 'lime/about.html')
 
 
 def categories(request, cat_id):
