@@ -1,7 +1,8 @@
-{% extends 'base.html' %}
-{% block context %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>{{ title }}</h1>
+{% include 'lime/includes/nav.html' %}
+
 <ul>
   {% for p in item %}
   <li>
@@ -15,4 +16,4 @@
   {% endfor %}
 </ul>
 
-{% endblock %}
+{% include 'lime/includes/nav.html'only %} {% endblock %}
