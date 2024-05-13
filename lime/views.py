@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect, render
 
 menu = [
-    {"title": "О сайте", "url_name": "lime:about"},
+    {"title": "О нас", "url_name": "lime:about"},
     {"title": "Добавить товар", "url_name": "lime:add_item"},
     {"title": "Обратная связь", "url_name": "lime:contact"},
     {"title": "Войти", "url_name": "lime:login"},

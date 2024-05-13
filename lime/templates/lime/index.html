@@ -1,32 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
-  </head>
-  <body>
-    <ul>
-        <li><a href="{% url 'lime:index' %}">Главная</a></li>
-        {% for m in menu %}
-        {% if not forloop.last %}<li>{% else %}<li class="last">{% endif %}
-            <a href="{% url m.url_name %}">{{m.title}}</a>
-            </li>
-        {% endfor %}
-    </ul>
+{% extends 'base.html' %}
+{% block context %}
 
-    <h1>{{ title }}</h1>
-    <ul>
-      {% for p in item %}
-      <li>
-        <h2>{{ p.title }}</h2>
-        <p>{{ p.content }}</p>
-        <p><a href="{% url 'lime:item' p.id %}">Подробно о товаре</a></p>
-        {% if not forloop.last %}
-        <hr />
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+<h1>{{ title }}</h1>
+<ul>
+  {% for p in item %}
+  <li>
+    <h2>{{ p.title }}</h2>
+    <p>{{ p.content }}</p>
+    <p><a href="{% url 'lime:item' p.id %}">Подробно о товаре</a></p>
+    {% if not forloop.last %}
+    <hr />
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
